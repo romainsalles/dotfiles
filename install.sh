@@ -51,6 +51,7 @@ brew install the_silver_searcher
 # Install rvm
 curl -L https://get.rvm.io | bash -s stable --auto-dotfiles --autolibs=enable --rails
 source ~/.rvm/scripts/rvm
+echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"' >> ~/.bash_profile
 # Install ruby
 rvm install ruby-2.3.0
 rvm docs generate-ri
