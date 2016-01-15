@@ -29,8 +29,9 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 # Git
 # ==============================================================================
 brew install git
-git config --global user.email "rmnsalles@gmail.com"
-git config --global user.name "Romain Salles"
+cp .gitconfig ~/.gitconfig
+# Git will remember my password for me
+git config --global credential.helper osxkeychain
 
 # nvim
 # ==============================================================================
