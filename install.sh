@@ -22,6 +22,14 @@ echo "Use this Preset : ./Solarized Dark.itermcolors"
 echo "Start by downloading and installing XCode"
 echo "Don't forget to open it to accept the license and install the different components"
 
+
+# Postgres
+# ==============================================================================
+echo "Download and install Postgres from the official website"
+echo "Add in the ~/.bash_profile :"
+export PATH="$PATH:/Library/PostgreSQL/9.5/bin"
+xcode-select --install
+
 # Install Homebrew
 # ==============================================================================
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -32,6 +40,15 @@ brew install git
 cp .gitconfig ~/.gitconfig
 # Git will remember my password for me
 git config --global credential.helper osxkeychain
+git config --global core.excludesfile ~/.gitignore_global
+cp .gitignore_global ~/.gitignore_global
+# branch name in terminal
+git clone git://github.com/jimeh/git-aware-prompt.git
+nvim ~/.bash_profile
+export GITAWAREPROMPT=~/Development/dotfiles/plugins/git-aware-prompt
+source "${GITAWAREPROMPT}/main.sh"
+export PS1="\u@\h \W \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
+source ~/.bash_profile
 
 # nvim
 # ==============================================================================
