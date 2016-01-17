@@ -13,13 +13,16 @@ let g:ruby_path = system('rvm current')
 call plug#begin('~/.config/nvim/plugged')
 
 " A tree explorer plugin for navigating the filesystem
-" :source ~/.vimrc
+" :source ~/.config/nvim/init.vim
 " :PlugInstall
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'tpope/vim-fugitive'
 Plug 'altercation/vim-colors-solarized'
 Plug 'mhinz/vim-signify'
+Plug 'AndrewRadev/switch.vim' " gs to switch patterns
+Plug 'vim-scripts/matchit.zip'
+Plug 'scrooloose/nerdcommenter' " <leader>c<space>
 call plug#end()
 
 nmap <C-n> :NERDTreeToggle<CR>
@@ -94,3 +97,8 @@ if executable('ag')
   "nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
   nnoremap <Leader>g :grep! "\b<C-R><C-W>\b"<CR>:cw<CR><CR>
 endif
+
+" Ruby on Rails
+" ==============================================================================
+" new Hash syntax
+map <leader>h :%s/:([\w\d_]+)(\s*)=>/\1:/g<cr>
