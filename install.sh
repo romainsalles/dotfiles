@@ -70,13 +70,15 @@ curl -L https://get.rvm.io | bash -s stable --auto-dotfiles --autolibs=enable --
 source ~/.rvm/scripts/rvm
 echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"' >> ~/.bash_profile
 # Install ruby
-rvm install ruby-2.3.0
+rvm install ruby-3.0.0
 rvm docs generate-ri
 # Make sure you have the latest version of RVM
 rvm get stable --autolibs=enable --auto-dotfiles
 # To see all the versions of Ruby installed via RVM
 rvm list rubies
 # To use a specific version
-rvm use 2.3.0 --default
+rvm use 3.0.0 --default
 # To check
 ruby -v
+
+brew install node
